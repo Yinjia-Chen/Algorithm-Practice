@@ -1,11 +1,11 @@
-let s = "011101"
+let words = ["are", "amy", "u"], left = 0, right = 2
 
-// for (let i = 0; i < s.length; i++) {
+var vowelStrings = function (words, left, right) {
+  let vowels = new Set(['a', 'e', 'i', 'o', 'u'])
 
-
-//   console.log(s1,s2)
-// }
-
-for (const c of s) {
-  console.log(c);
+  for (const word of words) {
+    
+  }
 }
+
+vowelStrings(words, left, right)
