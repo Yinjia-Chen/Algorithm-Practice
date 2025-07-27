@@ -1,11 +1,16 @@
-let words = ["are", "amy", "u"], left = 0, right = 2
+let arr = [10,1,2,10,11,15]
 
-var vowelStrings = function (words, left, right) {
-  let vowels = new Set(['a', 'e', 'i', 'o', 'u'])
-
-  for (const word of words) {
-    
+var peakIndexInMountainArray = function (arr) {
+  let top = arr[0];
+  let index = 0;
+  for (index; index < arr.length; index++){
+    if (arr[index] >= top) {
+      top = arr[index];
+    } else {
+      break;
+    }
   }
-}
+  return index-1
+};
 
-vowelStrings(words, left, right)
+console.log(peakIndexInMountainArray(arr))
