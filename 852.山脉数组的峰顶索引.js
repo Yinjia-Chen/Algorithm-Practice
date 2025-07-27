@@ -29,7 +29,8 @@ var peakIndexInMountainArray = function (arr) {
     const mid = Math.floor((left + right) / 2)
     // 如果 mid 比右侧大，说明当前处于单调减
     if (arr[mid] > arr[mid + 1]) {
-      top = mid; // 假设当前是峰顶，后续循环中更新
+      // 只有处在单调减时才可能出现峰顶，假设当前是峰顶，后续循环中更新
+      top = mid;
       // 二分查找思想：如果当前不是峰顶，那么峰顶一点在左侧，缩小右边界将中点像左侧移动
       right = mid - 1;
     } else {
