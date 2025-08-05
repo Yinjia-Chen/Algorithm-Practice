@@ -14,7 +14,6 @@ var findMaxAverage = function (nums, k) {
     sum += nums[i]
   }
 
-
   let maxSum = sum; // 维护一个最大和
 
   // 调整滑动窗口
@@ -28,7 +27,7 @@ var findMaxAverage = function (nums, k) {
   return (maxSum / k)
 };
 
-// 1.1 前缀和练习 前缀和数组存放的仍然是窗口区间元素和：时空复杂度 O(n)
+// 1.1 前缀和练习 前缀和数组存放的就是前缀和：时空复杂度 O(n)
 var findMaxAverage = function (nums, k) {
   let avg = 0;
   const length = nums.length
