@@ -13,7 +13,7 @@ const lowerBound = (nums, target) => {
   return left; // 最后结果：数组中第一个 >=target 的下标
 }
 
-// Q1：为什么 把 =target 和 >target 的情况写在一起？
+// Q1：为什么把 =target 和 >target 的情况写在一起？
 // A:  lower_bound 要找“第一个 >= target”的位置。只要 nums[mid] >= target，答案不在 mid 右侧，
 //     应继续向左收缩（闭区间：right = mid - 1 / 半开区间：right = mid）。
 //     若等于时直接返回，可能错过更左的相同值（如 [1,2,2,2,3], target=2，应返回 1）。
