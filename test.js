@@ -1,2 +1,3 @@
-const opt = '5';
-console.log(isNaN(opt));
+const map = new Map();
+map.set('a', 1);
+console.log(map.size);
