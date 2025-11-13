@@ -11,6 +11,7 @@
  * @return {boolean}
  */
 // & 1.哈希 时空 O(N)
+// 哈希表存放结点，每次遍历查找是否已有当前结点，已有说明存在环
 var hasCycle = function (head) {
   // 记录节点索引
   let pos = -1;
@@ -32,4 +33,19 @@ var hasCycle = function (head) {
   return false;
 };
 
-// & 2.快慢指针
+// & 2.快慢指针 时间 O(N) 空间 O(1)
+  // 链表有环，则循环执行到主动退出(fast套了n圈追上slow)返回true
+  // 链表无环，则遍历到链表结尾，退出循环返回 false
+var hasCycle = function (head) {
+  let slow = head;
+  let fast = head;
+
+  // fast 一次走两个节点，因此要先校验 fast 本身，再校验 fast.next
+  while (fast && fast.next) {
+    slow = slow.next;
+    fast = fast.next.next;
+    if (slow === fast) return true;
+  }
+
+  return false;
+}
