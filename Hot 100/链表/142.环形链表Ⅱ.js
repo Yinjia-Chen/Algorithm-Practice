@@ -24,3 +24,20 @@ var detectCycle = function (head) {
   }
   return null;
 };
+
+// & 2.快慢指针 时间 O(n) 空间 O(1) Floyd判圈算法
+var detectCycle = function(head) {
+    let slow = head, fast = head, p=head;
+    while (fast && fast.next) {
+        slow = slow.next;
+        fast = fast.next.next;
+        if (fast === slow) { // 相遇
+            while (slow !== p) { // 再走 a 步
+                slow = slow.next;
+                p = p.next;
+            }
+            return slow;
+        }
+    }
+    return null;
+};
