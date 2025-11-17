@@ -34,3 +34,18 @@ var mergeTwoLists = function (list1, list2) {
 };
 
 // & 2.递归
+var mergeTwoLists = function (list1, list2) {
+  // 终止条件：某一条链表已经为空，将另一条链表剩下节点全都合并上去
+  if (list1 === null) return list2;
+  if (list2 === null) return list1;
+
+  // 递：剩余未合并部分的链表 (并用 next 接住)    归：当前的较小节点
+  // 单层逻辑：较小的头节点作为本层结果节点，将其 next 指向对剩余部分递归合并后的链表
+  // 这里的 list1 & list2 指的是两个链表当前的节点
+  if (list1.val < list2.val) {
+    list1.next = mergeTwoLists(list1.next, list2);
+    return list1;
+  }
+  list2.next = mergeTwoLists(list1, list2.next);
+  return list2;
+}
