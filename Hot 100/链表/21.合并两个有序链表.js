@@ -33,7 +33,7 @@ var mergeTwoLists = function (list1, list2) {
   return sentinel.next;
 };
 
-// & 2.递归
+// & 2.递归 时间 O(m + n) 空间 O(m + n)
 var mergeTwoLists = function (list1, list2) {
   // 终止条件：某一条链表已经为空，将另一条链表剩下节点全都合并上去
   if (list1 === null) return list2;
