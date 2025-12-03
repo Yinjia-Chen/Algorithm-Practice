@@ -10,11 +10,13 @@
  * @param {TreeNode} root
  * @return {boolean}
  */
+// 时空 O(N)
+// 现在比较的是 root 的左右子树，因此 isSameTree 的参数要改造成 左右子树的镜像对比（也就是默认 p 和 q 相同）
+const isSameTree = (p, q) => {
+  if (p === null || q === null) return p === q;
+  return p.val === q.val && isSameTree(p.left, q.right) && isSameTree(p.right, q.left);
+}
+
 var isSymmetric = function (root) {
-  if (!root) return true;
-  let ans = true;
-  const left = isSymmetric(root.left);
-  const right = isSymmetric(root.right);
-  ans = left === right ? true : false;
-  return ans;
+  return isSameTree(root.left, root.right);
 };
