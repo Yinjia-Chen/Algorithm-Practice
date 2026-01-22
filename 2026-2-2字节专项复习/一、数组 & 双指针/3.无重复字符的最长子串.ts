@@ -9,7 +9,7 @@ function lengthOfLongestSubstring(s: string): number {
   const set = new Set();
   for (let right = 0; right < s.length; right++) {
     const char = s[right];
-    while (set.has(char)) { // 进右端点，做校验-子串中不存在相同字符
+    while (set.has(char)) { // 不存在相同字符，若未删除目标字符，重复逻辑
       set.delete(s[left]); // 删除子串最左端字符
       left++; // 移动左端点，调整窗口
     }
